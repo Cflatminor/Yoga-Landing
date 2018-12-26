@@ -1,0 +1,70 @@
+@keyframes sheen
+  100%
+    transform: rotateZ(60deg) translate(1em, -9em)
+
+@mixin join-button
+  width: 160px
+  height: 45px
+  background: rgba(58,167,50,1)
+  background: linear-gradient(left, rgba(58,167,50,1) 0%, rgba(0,136,2,1) 100%)
+  border-radius: 5px
+  outline: 0 !important
+  border: 0
+  font-family: "Montserrat-Regular"
+  text-transform: uppercase
+  color: #fff
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 16px
+  text-transform: uppercase
+  letter-spacing: 1.6px
+  font-weight: 100
+  text-decoration: none
+  position: relative
+  overflow: hidden
+  transition: ease-in-out .25s
+  box-shadow: 0px 8px 20px 1px rgba(0,68,0,0.2)
+  &::after
+    content: ''
+    position: absolute
+    top: -50%
+    right: -50%
+    bottom: -50%
+    left: -50%
+    background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0))
+    transform: rotateZ(60deg) translate(-5em, 7.5em)
+  &:hover
+    cursor: pointer
+    transform: rotate(1deg)
+    &::after
+      animation: sheen .8s forwards
+  &:focus
+    &::after
+      animation: sheen 1s forwards
+
+@mixin form-font
+  font-family: "Roboto-Regular"
+  font-size: 14px
+  text-transform: none
+  letter-spacing: 0.4px
+  color: #487A49
+
+@mixin nav-hover
+  &::after
+    content: ''
+    display: block
+    width: 2px
+    height: 2px
+    background: #024903
+    opacity: 0
+    position: absolute
+    left: 0
+    top: 20px
+    transition: ease-in-out .25s
+  &:hover
+    color: green
+    text-decoration: none
+    &::after
+      opacity: 1
+      width: 100%

@@ -1,0 +1,639 @@
+@import "additional"
+
+.hamburger
+  display: none
+
+.heading
+  position: relative
+  background: url("../img/header-bg.png") no-repeat 50% 0%
+  z-index: 1
+  &::before
+    content: ""
+    display: block
+    width: 361px
+    height: 415px
+    background: url("../img/header-before.png") no-repeat 0% 0%
+    position: absolute
+    left: 0
+    top: 0
+    opacity: .2
+    z-index: -1
+  &::after
+    content: ""
+    display: block
+    width: 361px
+    height: 415px
+    background: url("../img/header-after.png") no-repeat 0% 0%
+    position: absolute
+    right: 0
+    top: 0
+    opacity: .2
+    z-index: -1
+
+.header
+  & .row
+    height: 100px
+    align-items: center
+  &__logo
+    padding-top: 4px
+    padding-left: 15px
+  &__menu
+    z-index: 99
+    &-list
+      margin-left: -18px
+      justify-content: space-around
+      z-index: 99
+    &-link
+      font-family: "Roboto-Regular"
+      font-size: 14px
+      letter-spacing: -0.1px
+      word-spacing: 1px
+      text-transform: uppercase
+      text-decoration: none
+      color: #024903
+      position: relative
+      @include nav-hover
+
+.desk
+  padding: 50px 0
+  & .row
+    justify-content: space-between
+  &__title
+    padding: 15px
+    font-family: "Montserrat-Regular"
+    font-size: 22px
+    text-transform: uppercase
+    letter-spacing: 2px
+    color: #024903
+    &-additional
+      padding: 20px 15px
+      font-family: "Oswald-Light"
+      font-size: 36px
+      color: #024903
+      text-transform: uppercase
+      letter-spacing: 0.4px
+      & span
+        &:nth-of-type(1)
+          line-height: 1.4
+        &:nth-of-type(2)
+          font-family: "Oswald-Bold"
+          margin-left: 100px
+          letter-spacing: 0.1px
+          line-height: 1.2
+        &:nth-of-type(3)
+          font-weight: 100
+          font-size: 18px
+          margin-left: 230px
+          letter-spacing: 0.4px
+          line-height: 2
+  & p
+    padding: 5px 15px
+    font-family: "Roboto-Regular"
+    font-size: 13px
+    line-height: 1.3
+    letter-spacing: 1px
+    color: #024903
+  &__picture
+    margin: 22px 18px 40px 0
+    width: 633px
+    display: none
+  &__button
+    display: block
+    margin: 24px 15px
+    @include join-button
+
+.advantages
+  margin-bottom: 10px
+  &__title
+    font-family: "Oswald-Light"
+    font-size: 36px
+    color: #024903
+    text-align: center
+    text-transform: uppercase
+    letter-spacing: 0.3px
+    padding: 2px
+  &__image
+    margin-top: 30px
+    width: 539px
+  &__articles
+    justify-content: space-between
+    margin-top: 10px
+    &-wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+  &__article
+    flex-basis: 48%
+    &-title
+      font-family: "Roboto-Bold"
+      font-size: 16px
+      text-transform: uppercase
+      font-weight: 100
+      color: #024903
+      padding-top: 20px
+      letter-spacing: 1px
+      & span
+        text-decoration: underline
+    &-text
+      margin-top: 10px
+      font-family: "Roboto-Regular"
+      font-size: 13px
+      letter-spacing: 1.2px
+      line-height: 1.3
+  &__button
+    @include join-button
+    margin: 38px auto
+
+.author
+  margin-top: 45px
+  margin-bottom: 55px
+  &__title
+    font-family: "Oswald-Light"
+    font-size: 36px
+    color: #024903
+    text-align: center
+    text-transform: uppercase
+    padding: 49px
+  &__card
+    background: #E5F0E5
+    margin: 0 auto
+    position: relative
+    & .row
+      margin-top: 60px
+    &-text
+      z-index: 25
+    &-list
+      list-style-type: disc
+      padding: 68px 70px 68px 80px
+      &-item
+        padding-top: 16px
+        font-family: "Roboto-Medium"
+        font-size: 16px
+        text-transform: uppercase
+        white-space: nowrap
+        color: #024903
+        & span
+          font-family: "Roboto-Regular"
+          font-size: 13px
+          text-transform: none
+          white-space: normal
+          letter-spacing: 1px
+          line-height: 1.6
+    &-title
+      font-family: "Oswald-Medium"
+      font-size: 26px
+      color: #024903
+      text-transform: uppercase
+    &::before
+      content: ""
+      display: block
+      width: 243px
+      height: 279px
+      background: url("../img/card-before.png") no-repeat
+      position: absolute
+      left: -58px
+      top: -44px
+    &::after
+      content: ""
+      display: block
+      width: 243px
+      height: 279px
+      background: url("../img/card-after.png") no-repeat
+      position: absolute
+      right: -62px
+      bottom: -47px
+      z-index: 1
+    &-girlPic
+      margin-left: 18px
+      margin-top: 63px
+      transition: ease-in-out .75s
+      position: relative
+      &:hover
+        transform: translateY(-7px)
+      &-image
+    &-plantImage
+      z-index: 5
+    &-plantPic
+      margin-left: -18px
+      margin-top: 80px
+  &__button
+    @include join-button
+    margin: 85px auto 0 auto
+
+.include
+  margin: 102px auto 50px auto
+  position: relative
+  background: #E5F0E5
+  border-radius: 90%/25%
+  padding-bottom: 30px
+  &::before
+    content: ""
+    display: block
+    width: 295px
+    height: 591px
+    position: absolute
+    left: 0
+    top: -95px
+    background: url('../img/mandala.png') no-repeat
+  &__title
+    font-family: "Oswald-Light"
+    font-size: 36px
+    color: #024903
+    text-align: center
+    text-transform: uppercase
+    padding-top: 105px
+    padding-bottom: 20px
+    letter-spacing: 0.3px
+  &__article
+    &-title
+      font-family: "Roboto-Bold"
+      font-size: 16px
+      text-transform: uppercase
+      font-weight: 100
+      color: #024903
+      padding-top: 32px
+      letter-spacing: 1.2px
+      & span
+        text-decoration: underline
+    &-text
+      font-family: "Roboto-Regular"
+      font-size: 13px
+      text-transform: none
+      white-space: normal
+      letter-spacing: 0.8px
+      line-height: 1.2
+      color: #024903
+      padding: 11px 0 95px 20px
+      font-weight: 100
+      & li
+        position: relative
+        padding-top: 4px
+        &::before
+          content: "-"
+          position: absolute
+          left: -10px
+          height: 5px
+          width: 5px
+
+.reviews
+  margin-top: 64px
+  &__title
+    font-family: "Oswald-Light"
+    font-size: 36px
+    color: #024903
+    text-align: center
+    text-transform: uppercase
+    padding: 5px
+  &__slider
+    margin: 45px 0
+    &-image
+      max-width: 350px
+      min-width: 150px
+    &-decription
+      margin-top: 20px
+      font-family: "Roboto-Medium"
+      font-size: 14px
+      text-transform: uppercase
+      color: #024903
+      & span
+        font-family: "Roboto-LightItalic"
+        text-transform: none
+  &__button
+    @include join-button
+    margin: 18px auto
+
+.slick
+  & img
+    margin: auto
+  &-slide
+    margin: auto
+    &:focus
+      outline: 0 !important
+  &-next, &-prev
+    padding: 0
+    background: 0
+    border: 0
+    font-size: 0
+    outline: 0
+    position: absolute
+    top: 37%
+    cursor: pointer
+    &::before
+      content: ''
+      display: block
+      width: 25px
+      height: 47px
+  &-next
+    right: -70px
+    &::before
+      background: url('../img/r-arrow.png') no-repeat
+  &-prev
+    left: -74px
+    &::before
+      background: url('../img/l-arrow.png') no-repeat
+
+.pricing
+  margin-top: 82px
+  &__title
+    font-family: "Oswald-Light"
+    font-size: 36px
+    color: #024903
+    text-align: center
+    text-transform: uppercase
+    padding-top: 10px
+    letter-spacing: 0.3px
+  & .row
+    flex-wrap: wrap
+  &__article
+    flex-basis: 30%
+    min-width: 300px
+    border-radius: 5px
+    height: 350px
+    margin: 50px auto
+    background: #E5F0E5
+    cursor: default
+    transition: ease-in-out .15s
+    &:hover
+      box-shadow: 0px 5px 30px 2px rgba(0,0,0,0.2)
+    &-title
+      margin-top: 10px
+      padding: 10px
+      text-align: center
+      font-family: "Roboto-Bold"
+      font-size: 24px
+      text-transform: uppercase
+      color: #024903
+      letter-spacing: 2px
+    & hr
+      color: #CFD9CF
+      width: 85%
+      opacity: .4
+    &-online, &-live, &-price
+      font-family: "Roboto-Bold"
+      font-size: 16px
+      text-transform: uppercase
+      font-weight: 100
+      color: #024903
+      padding-top: 5px
+      text-align: center
+      letter-spacing: 1.2px
+      line-height: 1.4
+      & span
+        font-family: "Montserrat-Regular"
+        font-size: 15px
+        text-transform: uppercase
+        color: #024903
+        letter-spacing: 0.5px
+    &-live
+      padding-top: 10px
+      letter-spacing: 1.4px
+    &-price
+      font-size: 48px
+      padding-top: 5px
+      letter-spacing: 2px
+      position: relative
+      &::after
+        content: " грн"
+        font-family: "Montserrat-Regular"
+        font-size: 15px
+        text-transform: uppercase
+        letter-spacing: 2px
+        color: #024903
+        letter-spacing: 0.5px
+        position: absolute
+        bottom: 15px
+  &__button
+    @include join-button
+    margin: 10px auto
+
+.booking
+  &__title
+    text-align: center
+    font-family: "Oswald-Bold"
+    font-size: 48px
+    padding: 10px
+    margin: 35px 0 5px 0
+    color: #024903
+    text-transform: uppercase
+    letter-spacing: 0.1px
+    &-additional
+      font-family: "Montserrat-Regular"
+      text-transform: uppercase
+      color: #024903
+      text-align: center
+      padding-top: 8px
+      letter-spacing: 0.6px
+      &:nth-of-type(1)
+        font-size: 30px
+        & .span1
+          font-family: "Oswald-Bold"
+          font-size: 36px
+        & .span2
+          font-family: "Roboto-Black"
+          font-size: 82px
+          color: #FF7256
+      &:nth-of-type(2)
+        font-size: 20px
+        padding: 18px
+        margin: 20px 0 5px 0
+        letter-spacing: 2px
+  &__timer
+    flex-wrap: wrap
+    margin-top: 30px
+    &-wrap
+      justify-content: space-between
+      flex-wrap: wrap
+    &-circle
+      height: 150px
+      width: 150px
+      border: 1px solid rgba(0,0,0,0.1)
+      border-radius: 50%
+      text-align: center
+      padding: 30px
+      font-family: "Montserrat-Regular"
+      font-size: 72px
+      color: #024903
+    &-text
+      font-size: 20px
+      text-transform: uppercase
+  &__button
+    @include join-button
+    margin: 50px auto
+    width: 240px
+    height: 68px
+    font-size: 20px
+    &::after
+      content: ''
+      position: absolute
+      top: -50%
+      right: -50%
+      bottom: -50%
+      left: -50%
+      background: transparent
+    &:hover
+      cursor: pointer
+      transform: none
+      color: aqua
+
+.bottom
+  position: relative
+  z-index: 0
+
+.participation
+  margin: 102px 0 0 0
+  background: url('../img/woman.png') no-repeat 50% 50%
+  height: 930px
+  position: relative
+  z-index: 1
+  &__form
+    margin: 50px  auto
+    background: #fff
+    &-title
+      text-align: center
+      font-family: "Roboto-Bold"
+      color: #487A49
+      text-transform: uppercase
+      letter-spacing: 0.8px
+      font-size: 20px
+      padding: 18px 0 10px 0
+    & p
+      @include form-font
+      line-height: 1.2
+      padding: 1px 12px
+      text-align: center
+    &-name, &-mail, &-phone
+      display: block
+      width: 280px
+      margin: 22px auto 0 auto
+      & label
+        @include form-font
+        font-weight: 100
+      & input
+        width: 280px
+        height: 34px
+        margin-top: 2px
+        border: 1px solid #487A49
+        transition: ease .75s
+    &-personal
+      text-align: center
+      padding: 5px 20px
+      & label
+        @include form-font
+        font-weight: 100
+    &-button
+      @include join-button
+      margin: 20px auto
+      &::after
+        content: ''
+        position: absolute
+        top: -50%
+        right: -50%
+        bottom: -50%
+        left: -50%
+        background: transparent
+      &:hover
+        cursor: pointer
+        transform: none
+        color: aqua
+  &__map
+    max-width: 100%
+    position: absolute
+    bottom: -40px
+    left: 0
+    z-index: -2
+    &-image
+      display: block
+      max-width: 100%
+    &-details
+      height: 297px
+      width: 297px
+      background: #fff
+      padding: 10px
+      position: relative
+      margin-top: 100px
+      z-index: auto
+      &::after
+        position: absolute
+        content: ""
+        display: block
+        height: 297px
+        width: 297px
+        border: 4px solid green
+        right: -25px
+        bottom: -25px
+        z-index: -1
+      & .row
+        &:nth-of-type(1)
+        padding-top: 24px
+        &:nth-of-type(2)
+          padding-top: 52px
+        &:nth-of-type(3)
+          padding-top: 31px
+        &:nth-of-type(4)
+          padding-top: 32px
+      & label
+        font-family: "Roboto-Medium"
+        font-size: 16px
+        text-transform: uppercase
+        white-space: nowrap
+        color: #487a49
+        letter-spacing: 1.4px
+      & p
+        font-family: "Roboto-LightItalic"
+        font-size: 16px
+        font-weight: 100
+        color: #487a49
+        letter-spacing: 0.5px
+        word-spacing: 0.4px
+        line-height: 1.2
+        margin-top: -2px
+        margin-left: -4px
+        display: flex
+        & .googleMap, & .phoneNum, & .mailTo
+          color: #487a49
+        & .phoneNum, & .mailTo
+          text-decoration: none
+          word-spacing: 0.1px
+    &-socLink
+      margin-right: 20px
+      transition: ease .25s
+      &:hover
+        transform: rotate(360deg)
+
+  & #num
+    white-space: nowrap
+  & #e-mail
+    margin-top: -4px
+  & #soc
+    margin-top: -6px
+
+.footer
+  margin-top: 38px
+  background: #487A49
+  & .row
+    align-items: center
+    position: relative
+  &__logo
+    padding: 25px 15px
+    &-pic
+      display: block
+  &__phone
+    font-family: "Roboto-Regular"
+    font-size: 16px
+    text-transform: uppercase
+    color: #fff
+    font-weight: 100
+    & span
+      font-size: 14px
+  &__menu
+    &-list
+      margin-left: -18px
+      justify-content: space-around
+    &-link
+      font-family: "Roboto-Regular"
+      font-size: 14px
+      letter-spacing: -0.1px
+      word-spacing: 1px
+      text-transform: uppercase
+      text-decoration: none
+      color: #fff
